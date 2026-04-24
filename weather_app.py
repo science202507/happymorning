@@ -40,7 +40,7 @@ def convert_to_grid(lat, lon):
 @st.cache_data(ttl=3600)
 def fetch_weather(nx, ny):
     try:
-        SERVICE_KEY = "f440cb846db16b6c36499280dc523a010d51e52a878c4e59d0bdf162db652d9a"
+        service_key = st.secrets["SERVICE_KEY"]
         url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
         
         # 한국 시간(KST) 강제 설정 (서버가 외국에 있어도 오늘 날짜 잡기)
